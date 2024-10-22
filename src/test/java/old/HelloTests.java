@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -13,6 +14,7 @@ public class HelloTests {
 
 
     @Test
+    @Tag("@Hello")
     public void testRestAssured() {
         Map<String, String> params = new HashMap<>();
         params.put("name", "Nikita");
@@ -26,6 +28,7 @@ public class HelloTests {
     }
 
     @Test
+    @Tag("@Name")
     public void withJsonPath() {
         Map<String, String> params = new HashMap<>();
         params.put("name", "Nikita");
